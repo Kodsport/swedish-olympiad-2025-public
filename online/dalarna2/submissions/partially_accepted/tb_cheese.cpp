@@ -1,0 +1,85 @@
+// dör nog om grafen är lång
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+#define ll long long
+#define INF ((ll)(1e9+7))
+#define fo(i, n) for(ll i=0;i<((ll)n);i++)
+#define deb(x) cout << #x << " = " << (x) << endl;
+#define deb2(x, y) cout << #x << " = " << (x) << ", " << #y << " = " << (y) << endl
+#define pb push_back
+#define mp make_pair
+#define F first
+#define S second
+#define LSOne(S) ((S) & (-S))
+#define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pl;
+typedef vector<int> vi;
+typedef vector<ll> vl;
+typedef vector<pii> vpii;
+typedef vector<pl> vpl;
+typedef vector<vi> vvi;
+typedef vector<vl> vvl;
+typedef vector<vpii> vvpii;
+typedef vector<vpl> vvpl;
+
+template <class result_t=std::chrono::milliseconds,class clock_t=std::chrono::steady_clock,class duration_t = std::chrono::milliseconds>
+auto since(std::chrono::time_point<clock_t, duration_t> const& start){return std::chrono::duration_cast<result_t>(clock_t::now() - start);}
+
+
+vvl adj(6e5);
+vl p;
+
+pl nextPos;
+
+ll dfs(int u, int last = -1){
+    ll res = 0;
+    ll maxVal = 0;
+    for(auto &v : adj[u]){
+        if(v == last) continue;
+        ll temp = dfs(v, u);
+        res+=temp;
+        maxVal = max(maxVal, temp);
+        if(temp > nextPos.F && last == -1){
+            nextPos = {temp, v};
+        }
+    }
+    if(last == -1){
+        return max(max(maxVal, p[u]), res/2ll+res%2ll);
+    }
+    res = max(res, p[u]);
+    return res;
+}
+
+
+int main() {
+    auto start = std::chrono::steady_clock::now(); 
+
+    cin.tie(0)->sync_with_stdio(0);
+
+    int n;
+    cin >> n;
+    ll from, to;
+    p.resize(n);
+    fo(i, n) cin >> p[i];
+    fo(i, n-1){
+        cin >> from >> to;
+        adj[--from].pb(--to);
+        adj[to].pb(from);
+    }
+
+    ll ans = 1e18;
+    nextPos = {-1, 0};
+    while(since(start).count() < 700){
+        ll temp = nextPos.S;
+        nextPos = {-1, 0};
+        ans = min(ans, dfs(temp));
+    }
+    cout << ans << "\n";
+
+    return 0;
+}

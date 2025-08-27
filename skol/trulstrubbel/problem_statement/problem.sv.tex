@@ -1,0 +1,64 @@
+\problemname{Truls trubbel}
+\noindent
+
+Truls och Henry spelar pingis mot varandra.
+
+Både Truls och Henry ogillar starkt matematik.
+Mer än allting annat ogillar de att räkna på antalet poäng som vardera person har under tävlingen.
+För att förenkla poängräkningen har de kommit på en egen lösning:
+
+Istället för att ständigt hålla koll på hur många poäng de har, skriver de 
+ett ''\texttt{T}'' om Truls får poäng och ett ''\texttt{H}'' om Henry
+får poäng, direkt efter varje vunnen boll.
+
+När Truls och Henry spelar pingis fungerar poängsystemet enligt dessa tre regler:
+\begin{enumerate}
+  \item Vid varje boll delas ett poäng ut.
+  \item En spelare vinner en match om båda av de två följande villkoren är uppfyllda:
+  \begin{itemize}
+    \item Spelaren leder med åtminstone 2 poäng över sin motståndare.
+    \item Spelaren har minst 11 poäng.
+  \end{itemize}
+  Till exempel, om Truls har 11 poäng och Henry har 9 poäng, så utses Truls till vinnare. Men om Truls har 11 poäng och Henry har 10 poäng finns det ännu ingen vinnare.
+
+  \item När en spelare har vunnit enligt ovanstående kriterier, så nollställs poängen för båda spelarna och en ny match startar.
+\end{enumerate}
+
+Nu har Truls och Henry spelat väldigt länge, och båda vill veta hur poängen ser ut.
+De ber de dig att skriva ett program som
+räknar ut den aktuella poängställningen åt dem, baserat på deras anteckningar.
+
+
+\section*{Indata}
+Indatan består av poängsträngen, som består av flera bokstäver på en rad. Antalet bokstäver är mellan 1 och 30. 
+Varje bokstav kommer antingen vara ''\texttt{T}'' eller ''\texttt{H}''.
+
+\section*{Utdata}
+Skriv ut $T$-$H$, där $T$ är antalet poäng som Truls har, och $H$ är antalet poäng som Henry har.
+
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $40$       & En match avgörs alltid så fort någon får 11 poäng. \\ \hline
+  $2$    & $60$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+
+\section*{Förklaring av exempelfall 1}
+Sammanlagt har Truls vunnit fyra bollar, och Henry 5 bollar.
+
+\section*{Förklaring av exempelfall 2}
+Eftersom Truls vann matchen när poängställningen blev \texttt{11-0}, så nollställdes poängen till \texttt{0-0}.
+
+\section*{Förklaring av exempelfall 3}
+Även om båda har fler än 11 poäng leder ingen med 2 poäng. Därför har ingen vinnare utsetts ännu.
+
+\section*{Förklaring av exempelfall 4}
+Detta spel är en fortsättning på exempelfall 3 där Henry vinner matchen efter ytterligare två vunna bollar. 
+Poängen nollställs, och Henry vinner därefter en till boll. Därför står det \texttt{0-1}.

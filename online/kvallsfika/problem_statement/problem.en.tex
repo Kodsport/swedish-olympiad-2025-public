@@ -1,0 +1,64 @@
+\problemname{Evening Fika}
+\noindent
+Sara loves fika! She has just received $P$ Swedish kronor from her mom to buy some evening fika.
+Since Sara is smart, she will try to spend the money as wisely as possible. At the store Lugnbyrån,
+there are $N$ pastries available. Each pastry has a certain price and a specific category.
+Because Sara likes fika so much, she \textit{almost} thinks all kinds of pastries are equally tasty.
+Namely, she has no preference for which category of pastry to buy, but she feels it would be
+a bit too monotonous if she buys more than $K$ pastries of the same category.
+
+Help Sara buy as many pastries as possible, with a total cost less than or equal to $P$.
+Also, ensure that there are no more than $K$ pastries from the same category among those she bought.
+You only need to print out how many pastries she can buy, not which ones.
+
+\section*{Input}
+The first line of the input contains the integer $N$ ($1 \leq N \leq 10^5$), the number of pastries
+Sara can choose from.
+
+The next line contains the integer $P$ ($1 \leq P \leq 10^8$), the number of kronor Sara has as a
+budget for her evening fika.
+
+The next line contains the integer $K$ ($1 \leq K \leq N$), the maximum number of pastries from
+each category that Sara is willing to eat.
+
+The next line contains the integers $c_1, c_2, \dots, c_N$ ($1 \leq c_i \leq P$), where $c_i$ means that
+that pastry $i$ costs $c_i$ kronor. Note that the total cost of all pastries may not necessarily fit
+in a 32-bit integer.
+
+The last line contains the integers $t_1, t_2, \dots, t_N$ ($1 \leq t_i \leq 10^5$). There are
+exactly $10^5$ categories of pastries, and we refer to each with an integer. Each $t_i$ means that
+that pastry $i$ belongs to category $t_i$.
+
+
+\section*{Output}
+Print an integer: the number of pastries that Sara can buy if she uses her budget optimally.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $20$       & The subtask has a single testcase, the one on the poster (\url{https://www.progolymp.se/2025/affisch.pdf}). \\ \hline 
+  $2$    & $5$        & $K=N$ and you can afford to buy every single pastry. \\ \hline
+  $3$    & $15$       & You can afford to buy every single pastry. \\ \hline
+  $4$    & $5$        & $c_i=1$, that is to say every pastry costs $1$ krona. \\ \hline
+  $5$    & $17$       & $K=N, N \leq 500$ \\ \hline
+  $6$    & $21$       & $K=N$ \\ \hline
+  $7$    & $9$        & $N \leq 500$ \\ \hline
+  $8$    & $8$        & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample 1}
+In this sample, Sara can afford to buy all the pastries, but they all belong to the same category (category 1).
+Since she can buy at most 2 per category, she can purchase 2 of them.
+
+\section*{Explanation of Sample 2}
+In this sample, categories are not a problem because $K$ is large, but Sara cannot afford to buy all the pastries.
+If she buys the pastries priced at $4, 3, 2, 1$, she can afford exactly 4.
+
+\section*{Explanation of Sample 3}
+An optimal solution is to buy pastries priced at $1, 1, 4, 5$. Here, Sara could have bought more pastries if not
+limited by the categories.

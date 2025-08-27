@@ -1,0 +1,65 @@
+\problemname{Danish}
+
+\noindent
+
+Boschua is moving to Lund to study at LTH. 
+You've learned that Lund is in Skåne, and now you're worried that Boschua might start sounding Danish.
+
+To prevent this, you want to show Boschua how many words don't sound Danish at all. 
+According to you, a word sounds Danish if it contains at least one word from the Danish dictionary. 
+Unfortunately, you don't have access to the official Danish dictionary, but the old dictionary you found in the basement will have to suffice.
+
+For example, suppose the dictionary only contains the word \texttt{knallert}. Then you consider the word \texttt{hus\textbf{knallert}rumma} 
+to sound Danish because it contains the word \texttt{knallert}. On the other hand, you consider the word \texttt{\textbf{knaller}un\textbf{t}} 
+to \textbf{not} sound Danish because it does not contain \texttt{knallert}.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[scale=0.7]{danska-knallert.png}
+    \caption{The word \texttt{husknallertrumma} sounds Danish.}
+  \end{minipage}\hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[scale=0.7]{knallerunt.png}
+    \caption{The word \texttt{knallerunt} does not sound Danish.}
+  \end{minipage}
+\end{figure}
+
+You quickly realize there are too many words that don't sound Danish to list them all. 
+Thus, you decide it's sufficient to count the number of words that don't sound Danish and share that with Boschua. 
+Even this turns out to be difficult since there are so many words that don't sound Danish.
+
+Finally, you settle for counting the number of words that consist of only lowercase English letters 
+\texttt{a}-\texttt{z}, have exactly $N$ letters, and don't sound Danish. A word sounds Danish if it contains 
+at least one word from the dictionary as a substring.
+
+\section*{Input}
+The first line of input contains the integers $N$ ($1 \leq N \leq 100$) and $M$ ($0 \leq M \leq 150$), 
+the length of the words being considered and the number of words in the dictionary.
+
+The following $M$ lines each contain a word from the dictionary. All these words have a length of at most $N$ 
+and consist of the letters \texttt{a}-\texttt{z}. All words in the dictionary are unique.
+
+\section*{Output}
+Print the number of words of length $N$ that don't sound too Danish. Since this number can be very large, 
+output it \href{https://en.wikipedia.org/wiki/Modulo}{modulo} $10^9+7$. 
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $10$       & $M = 0$ \\ \hline
+  $2$    & $13$       & $N \leq 3, M \leq 10$ \\ \hline
+  $3$    & $23$       & $M = 1$ \\ \hline
+  $4$    & $32$       & $N, M \leq 50$ \\ \hline
+  $5$    & $22$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Samples}
+In the first sample, there are $26^3$ different words. Since the Danish dictionary is empty in this case, none of them are forbidden.

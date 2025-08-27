@@ -1,0 +1,8 @@
+uuid: 228ccbfe-c4a6-42c9-8bb4-6fb1e27ec5dc
+source: Programmeringsolympiadens skolkval 2025
+rights_owner: Programmeringsolympiaden
+license: cc by-sa
+type: scoring
+
+grading:
+    show_test_data_groups: yes

@@ -1,0 +1,11 @@
+uuid: 71f6b154-3fb2-4b81-b157-d3ef0cefe316
+author: Arvid Kristoffersson
+source: Programmeringsolympiadens onlinekval 2025
+rights_owner: Programmeringsolympiaden
+license: cc by-sa
+type: scoring
+
+grading:
+    show_test_data_groups: yes
+limits:
+  time_multiplier: 1.5

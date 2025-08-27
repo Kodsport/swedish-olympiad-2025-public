@@ -1,0 +1,42 @@
+\problemname{Siffrid's Digit Sum}
+
+Siffrid loves playing with numbers! Right now, she is playing with the integer $N$.
+
+She wonders how to create the smallest and largest number that have the same digit sum and number of digits as $N$.
+Can you help her?
+
+The digit sum of a number is defined as the sum of all its digits.
+
+\noindent
+For example, the digit sum of the number $1234$ is:
+$$
+1 + 2 + 3 + 4 = 10,  
+$$
+
+and the digit sum of the number $220$ is:
+$$
+2 + 2 + 0 = 4.
+$$
+
+\section*{Input}
+Input consists of the single integer $N$ ($1 \le N \le 10^9$).
+
+\section*{Output}
+Print two integers on the same line: the smallest and largest number with the same digit sum and
+number of digits as $N$. The numbers should be separated by a space.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $40$       & $N \leq 10^5$ \\ \hline
+  $2$    & $60$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample 1}
+We cannot create a number smaller than $101$ with the same digit sum and number of digits as $N$.
+Numbers like $11$ and $2$ have the same digit sum as $N$ but do not have the same number of digits as $101$.

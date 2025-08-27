@@ -1,0 +1,9 @@
+uuid: be98c8af-0a88-4a15-a794-9bc974558f8c
+author: Harry Zhang
+source: Programmeringsolympiadens skolkval 2025
+rights_owner: Programmeringsolympiaden
+license: cc by-sa
+type: scoring
+
+grading:
+    show_test_data_groups: yes

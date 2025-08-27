@@ -1,0 +1,51 @@
+\problemname{Programmeringsolympiaden's Budget}
+
+Programmeringsolympiaden (PO) must write a budget every year, which then needs to be approved by the
+treasurer Emil. This year, the PO leadership has proposed some rather wild ideas, such as buying
+2000 ducks and purchasing a PO-yacht to sail to the IOI (the world finals of competitive programming).
+Emil finds it difficult to determine whether the budget is reasonable or not.
+
+A budget consists of several revenues and expenses.
+To assess whether the budget is reasonable, Emil wants to calculate whether the proposed budget would
+result in Programmeringsolympiaden making a profit, a loss, or breaking even financially. Can you write a program to help Emil decide this?
+
+\section*{Input}
+The first line of input contains the integer $N$ ($1 \leq N \leq 30$), the number of revenues/expenses in the budget.
+
+This is followed by all $N$ revenues/expenses. Each is described over two lines: first, a description of what it is,
+a string of at most 30 characters. For simplicity, the string contains no spaces.  
+The next line contains an integer $K$ ($-10^7 \leq K \leq 10^7$). If $K$ is positive, it represents a revenue of $K$ kronor;
+otherwise, it is an expense of $-K$ kronor.
+
+\section*{Output}
+\begin{itemize}
+  \item If the budget would lead to PO making money, print ``Usch, vinst''. This translates to ``Ew, profit''.
+  \item If the budget breaks even, print ``Lagom''. This translates to ``Just right''.
+  \item If the budget would lead to a loss, print ``Nekad''. This translates to ``Denied''.
+\end{itemize}
+Note that you should not print the quotation marks.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $20$       & $K = 0$ for all $K$. \\ \hline 
+  $2$    & $30$       & $K \geq 0$ for all $K$. \\ \hline
+  $3$    & $50$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample 1}  
+Since the yacht costs much more than what PO receives from the sponsorship, the budget results in a loss, and thus the correct answer is \texttt{Nekad}.  
+
+\section*{Explanation of Sample 2}  
+Even though there are some expenses, their total is less than the revenue from the sponsorship.  
+
+\section*{Explanation of Sample 3}  
+If there is no PO at all, there are neither revenues nor expenses, which results in breaking even.  
+
+\section*{Explanation of Sample 4}  
+Here, the revenues exactly match the expenses, which also results in breaking even. 

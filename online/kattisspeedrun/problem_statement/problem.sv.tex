@@ -1,0 +1,56 @@
+\problemname{Kattis Speedrun}
+Joshuas nyårslöfte för 2024 var att lösa hälften av alla problem på hemsidan Kattis innan året är slut. 
+Nu börjar året närma sig sitt slut och han börjar inse att han kommer att behöva använda allt han kan för att nå sitt mål.
+Hittills har har bara löst andras problem på Kattis. Men han kan också skapa ett eget problem, ladda upp det och lösa det.
+Detta innebär ibland mindre arbete än att lösa någon annans problem, men leder också till att totala antalet problem ökar.
+
+Idag finns det $P$ stycken problem på Kattis, och Joshua har löst $S$ av dessa. Han kan göra följande saker:
+
+\begin{itemize}
+  \item Lösa ett problem. Detta tar $A$ sekunder och ökar $S$ med 1.
+  \item Skriva ett nytt problem. Detta tar $B$ sekunder och ökar både $P$ och $S$ med 1.
+\end{itemize}
+
+Om Joshua använder sin tid optimalt, hur många sekunder kommer det ta för honom att öka $S$ och $P$ så att
+$\frac{S}{P} > 0.5$?
+
+\section*{Indata}
+Den första raden i indatan innehåller heltalet $S$ ($0 \leq S \leq 10^5$), antalet problem som Joshua har
+löst hittills.
+
+Den andra raden innehåller heltalet $P$ ($1 \leq P \leq 10^5$), totala antalet problem som finns
+på Kattis hittills. Det är garanterat att $S < \frac{P}{2}$.
+
+Den tredje raden innehåller heltalet $A$ ($1 \leq A \leq 10^5$), tiden det tar att lösa ett problem.
+
+Den fjärde raden innehåller heltalet $B$ ($1 \leq B \leq 10^5$), tiden det tar att skapa ett nytt problem.
+
+Notera att i vissa testfall kan $A$ vara väldigt mycket större än $B$, och i andra testfall kan $B$ vara mycket större.
+
+\section*{Utdata}
+Skriv ut ett heltal: minsta antalet sekunder det kommer ta Joshua för att lösa strikt mer än hälften
+av alla problem på Kattis.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $12$       & $A=1, B=10^5$ \\ \hline
+  $2$    & $18$       & $B=1, A=10^5$ \\ \hline
+  $3$    & $20$       & $S, P \leq 1000$ \\ \hline
+  $4$    & $50$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall}
+I exempelfall 1 går det jättesnabbt att lösa problem, men tar jättelång tid att skapa nya. Optimala strategin
+är därmed att bara lösa problem. För att lösa mer än hälften måste han lösa $51$ stycken. Eftersom $A=1$ blir svaret
+$51$.
+
+I exempelfall 2 måste 2 problem lösas för att lösa mer än hälften.
+
+I exempelfall 3 är den optimala strategin att lösa 11 problem och skapa 1 problem. Detta tar sammanlagt $11 \cdot 7 + 1 \cdot 6=83$ sekunder.
+Det finns ingen annan strategi som är snabbare.

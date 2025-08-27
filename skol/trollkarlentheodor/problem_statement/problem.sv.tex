@@ -1,0 +1,51 @@
+\problemname{Trollkarlen Theodor}
+
+\noindent
+
+En mindre armé med $N$ monster befinner sig precis utanför Tästerås! Nu är det upp
+till Trollkarlen Theodor att besegra den och rädda staden. Varje monster har ett visst
+antal liv. För att skada monster kan
+Theodor avfyra magiska explosioner. Varje gång han avfyrar en explosion siktar han på ett
+särskilt monster. Sedan händer följande:
+\begin{itemize}
+  \item Alla monster förlorar $A$ liv av explosionen.
+  \item Monstret som Theodor siktade på förlorar ytterligare $S$ liv, 
+  eftersom det befinner sig i mitten av explosionen. Alltså förlorar monstret han siktar
+  på $S+A$ liv sammanlagt av just den explosionen.
+\end{itemize}
+Han kan fritt välja vilket monster han ska sikta på varje gång han avfyrar en explosion.
+Eftersom det är jobbigt att avfyra explosioner vill han veta det minsta antalet
+explosioner han behöver skjuta iväg för att besegra alla monster om han siktar optimalt.
+
+\section*{Indata}
+Den första raden av indata innehåller tre heltal, $N$ ($1 \leq N \leq 10$), $S$ ($1 \leq S \leq 10^9$) och $A$ ($0 \leq A \leq 10^9$),
+vilket är de tre talen som beskrivits ovan.
+
+Den andra raden innehåller $N$ heltal $h_1, h_2, \ldots, h_N$ ($1 \leq h_i \leq 10^9$), som beskriver antalet liv som vardera monster har.
+
+\section*{Utdata}
+Skriv ut minsta antalet explosioner som Theodor behöver avfyra för att döda alla monster.
+
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $20$       & $A = 0$ \\ \hline
+  $2$    & $35$       & $h_i \leq 100$ \\ \hline
+  $3$    & $5$        & $A \leq 10^5$ \\ \hline
+  $4$    & $40$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+
+\section*{Förklaring av exempelfall 1}
+Ett optimalt sätt att avfyra explosioner är följande:
+\begin{enumerate}
+  \item Avfyra en explosion på monstret med 7 liv. Monstren har nu \verb+4,1,2+ liv kvar.
+  \item Avfyra en explosion på monstret med 4 liv kvar. Monstret med 1 liv besegras. De resterande monstren har \verb+1,1+ liv kvar. 
+  \item Avfyra en explosion på vilket som helst av monstren. Nu har alla monster blivit besegrade och Theodor är klar.
+\end{enumerate}

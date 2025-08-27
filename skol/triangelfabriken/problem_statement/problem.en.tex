@@ -1,0 +1,49 @@
+\problemname{The Triangle Factory}
+
+\noindent
+Tristian works at a triangle factory.  
+His job is to classify different types of triangles produced in the factory.  
+Tristian now asks you to write a program that can replace him.
+
+Tristian will give you three positive integers, $a$, $b$, and $c$.
+These are the three angles of a triangle, given in degrees.
+
+Your program should do the following:  
+\begin{itemize}
+  \item If the triangle is obtuse, the program should print ``Trubbig Triangel''.
+  \item If the triangle is acute, the program should print ``Spetsig Triangel''.
+  \item If the triangle is right-angled, the program should print ``Ratvinklig Triangel''.
+\end{itemize}  
+
+To remind you of the definitions of obtuse, acute, and right-angled triangles:  
+\begin{itemize}
+  \item A triangle is obtuse if any of its angles are greater than $90$ degrees.  
+  \item A triangle is acute if all its angles are less than $90$ degrees.  
+  \item A triangle is right-angled if one of its angles is exactly $90$ degrees.  
+\end{itemize}  
+
+\section*{Input}
+The first line of input contains the integer $a$ $(1 \leq a < 180)$, the first angle of the triangle.
+The second line of input contains the integer $b$ $(1 \leq b < 180)$, the second angle of the triangle.
+The third line of input contains the integer $c$ $(1 \leq c < 180)$, the third angle of the triangle.
+
+It is guaranteed that $(1 \leq a, b, c < 180)$ holds. 
+It is also guaranteed that the input forms a valid triangle, meaning $a + b + c = 180$.  
+
+
+\section*{Output}
+The program should then print whether the triangle formed by the angles $a$, $b$, and $c$ is acute, obtuse, or right-angled.
+The answer must be one of the following: ``Trubbig Triangel'',
+``Spetsig Triangel'', or ``Ratvinklig Triangel''.  
+
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $100$       & No additional constraints. \\ \hline
+\end{tabular}

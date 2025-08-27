@@ -1,0 +1,48 @@
+\problemname{Triangelfabriken}
+\noindent
+
+Tristian jobbar på en triangelfabrik.
+Hans arbete är att klassificera olika sorters trianglar som produceras i fabriken.
+Tristian ber nu dig att skriva ett program som kan ersätta honom.
+
+Tristian kommer att ge dig tre positiva heltal, $a$, $b$ och $c$. 
+Dessa är de tre vinklarna i en triangel, angivna i grader.
+
+Ditt program ska göra följande:
+\begin{itemize}
+  \item Om triangeln är trubbig, så ska programmet skriva ut ''Trubbig Triangel''.
+  \item Om triangeln är spetsig, så ska programmet skriva ut ''Spetsig Triangel''.
+  \item Om triangeln är rätvinklig, så ska programmet skriva ut ''Ratvinklig Triangel''.
+  (Notera att vi använder ''a'' istället för ''ä'').
+\end{itemize}
+
+För att påminna om vad trubbiga, spetsiga och rätvinkliga trianglar är:
+\begin{itemize}
+  \item En triangel är trubbig om någon av dess vinklar är större än $90$ grader.
+  \item En triangel är spetsig om alla dess vinklar är mindre än $90$ grader.
+  \item En triangel är rätvinklig om en av dess vinklar är exakt $90$ grader.
+\end{itemize}
+
+
+\section*{Indata}
+Den första raden av indata innehåller heltalet $a$ $(1 \leq a < 180)$, som är den första vinkeln i triangeln.
+Den andra raden innehåller heltalet $b$ $(1 \leq b < 180)$, som är den andra vinkeln i triangeln.
+Den tredje raden innehåller heltalet $c$ $(1 \leq c < 180)$, som är den tredje vinkeln i triangeln.
+
+Det är garanterat att $a$, $b$ och $c$ är vinklarna av en triangel, alltså att $a + b + c = 180$.
+
+\section*{Utdata}
+Skriv ut vilken sorts triangel det är. Svaret måste antingen vara ''Trubbig Triangel'',
+''Spetsig Triangel'' eller ''Ratvinklig Triangel''.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $100$  & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+

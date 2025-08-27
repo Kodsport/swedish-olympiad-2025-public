@@ -1,0 +1,9 @@
+uuid: 64f69178-ef8d-47d9-9d46-391f7ae16cb5
+author: Joshua Andersson
+source: Programmeringsolympiadens onlinekval 2025
+rights_owner: Programmeringsolympiaden
+license: cc by-sa
+type: scoring
+
+grading:
+    show_test_data_groups: yes

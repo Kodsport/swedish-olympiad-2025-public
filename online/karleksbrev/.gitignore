@@ -1,0 +1,12 @@
+cpp_hashes.txt
+py_hashes.txt
+cs_hashes.txt
+java_hashes.txt
+rust_hashes.txt
+out
+hasher
+include/in.txt
+include/csharp/bin/
+include/csharp/obj/
+include/csharp/kattis.csproj
+*.class

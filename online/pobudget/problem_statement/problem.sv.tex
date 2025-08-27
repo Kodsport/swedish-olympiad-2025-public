@@ -1,0 +1,50 @@
+\problemname{Programmeringsolympiadens budget}
+Programmeringsolympiaden (PO) måste varje år skriva en budget, som sedan måste godkännas av kassören Emil.
+I år har PO-ledningen kommit med ganska vilda förslag såsom att köpa in 2000 ankor och att köpa in en PO-yacht för
+att kunna segla till VM i tävlingsprogrammering (IOI). Emil har svårt att avgöra om budgeten är rimlig eller inte.
+
+En budget består av ett flertal intäkter och utgifter. 
+För att kunna ta ställning till om budgeten är rimlig vill Emil beräkna om budgetförslaget hade lett till
+att Programmeringsolympiaden tjänar, förlorar, eller går jämnt ut ekonomiskt sett. Kan du skriva ett program
+som hjälper Emil avgöra detta?
+
+\section*{Indata}
+Den första raden i indatan innehåller heltalet $N$ ($1 \leq N \leq 30$), antalet intäkter/utgifter i budgeten.
+
+Därefter följer alla $N$ intäkter/utgifter. Varje beskrivs av två rader: först en beskrivning av vad det är, en
+sträng med längd som mest $30$. För enkelhetens skull innehåller strängen inga mellanslag.
+Nästa rad innehåller ett heltal $K$ ($-10^7 \leq K \leq 10^7$). Om $K$ är positivt
+representerar det en intäkt på $K$ kr, annars representerar det en utgift på $-K$ kronor.
+
+\section*{Utdata}
+\begin{itemize}
+  \item Om budgeten hade lett till PO tjänar pengar, skriv ut ''Usch, vinst''.
+  \item Om det går jämnt ut, skriv ut ''Lagom''.
+  \item Om den hade lett till förlust, skriv ut ''Nekad''.
+\end{itemize}
+Notera att du inte ska skriva ut citationstecknena.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $20$       & $K = 0$ för alla $K$. \\ \hline 
+  $2$    & $30$       & $K \geq 0$ för alla $K$. \\ \hline
+  $3$    & $50$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall 1}
+Eftersom yachten kostar mycket mer än PO får in från sponsring går budgeten med förlust, och därmed är rätt svar \texttt{Nekad}.
+
+\section*{Förklaring av exempelfall 2}
+Även om det finns en del utgifter är de sammanlagt mindre än intäkten från sponsring.
+
+\section*{Förklaring av exempelfall 3}
+Om det inte blir något PO alls finns varken intäkter eller utgifter, vilket går jämnt ut.
+
+\section*{Förklaring av exempelfall 4}
+Här matchar intäkterna utgifterna exakt, vilket också går jämnt ut.

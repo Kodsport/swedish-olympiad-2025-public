@@ -1,0 +1,61 @@
+\problemname{Theodor, Trollkarlen}
+
+\noindent
+
+Detta problem bygger på problemet \textit{Trollkarlen Theodor}.
+
+Ondskefulla Olle, som är ytterst ansvarig för all ondska, har tröttnat på att Theodor alltid förstör allting.
+Nu har Olle kommit på en ny ondskefull plan, och för att sätta den i verket måste han uppehålla Theodor.
+Till sitt förfogande har han $N$ monster, och eftersom han är så enormt mäktig kan han ge dessa monster olika antal liv.
+Olle vill nu räkna antalet sätt han kan ge olika mängder liv till sina olika monster, 
+så att Theodor behöver avfyra exakt $K$ magiska explosioner för att besegra alla monster. Enda kravet på antalet liv
+för ett monster är att det ska vara större än $0$.
+
+Precis som i problemet \textit{Trollkarlen Theodor} skadar Theodor monster genom att sikta på ett särskilt monster och avfyra
+en explosion. Monstret han siktar på förlorar då $S$ liv, och sedan förlorar alla monster (även det han siktade på) $A$ liv var. 
+Ett monster är besegrat om det har 0 eller färre liv.
+Theodor väljer hur han siktar på monster så att han minimerar antalet explosioner han behöver avfyra.
+
+
+\section*{Indata}
+Den första raden innehåller fyra tal, $N, K, S, A$ ($1 \leq N,K,S \leq 2\cdot10^5$, $0 \leq A \leq 2\cdot10^5$), vilket är de fyra talen som beskrivits ovan.
+
+\section*{Utdata}
+Skriv ut antalet sätt Olle kan ge liv till sina monster så att Theodor behöver avfyra exakt $K$ explosioner för att besegra alla. Eftersom detta tal kan bli väldigt stort ska
+du skriva ut det \href{https://en.wikipedia.org/wiki/Modulo}{modulo} $(10^9+7)$. 
+
+
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $5$        & $A = 0$, $N, K, S \leq 5$ \\ \hline
+  $2$    & $15$       & $A = 0$, $N, K, S \leq 50$ \\ \hline
+  $3$    & $20$       & $N, K, S, A \leq 50$ \\ \hline
+  $4$    & $20$       & $N, K, S, A \leq 300$ \\ \hline
+  $5$    & $20$       & $N, K, S, A \leq 2000$ \\ \hline
+  $6$    & $20$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall}
+I exempelfall 1 finns det ett monster, och de möjliga liv det kan ha så att Theodor besegrar det med exakt en explosion är \verb+1, 2, 3, 4, 5+.
+
+
+I exempelfall 2 finns det 10 fördelningar av monsterliv så att Theodor besegrar båda med exakt två explosioner. Dessa är:
+\begin{verbatim}
+  1 3
+  1 4
+  2 2
+  2 3
+  2 4
+  3 1
+  3 2
+  3 3
+  4 1
+  4 2
+\end{verbatim}

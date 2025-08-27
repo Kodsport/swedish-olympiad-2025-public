@@ -1,0 +1,48 @@
+\problemname{The Wizard Theodor}
+
+A small army of $N$ monsters is just outside Tästerås! Now it is up to the wizard Theodor to defeat
+them and save the city. Each monster has a certain amount of life points. To damage the monsters,
+Theodor can fire magical explosions. Each time he fires an explosion, he targets a specific monster.
+Then, the following occurs:
+
+\begin{itemize}
+  \item All monsters lose $A$ life points due to the explosion.
+  \item The monster that Theodor targeted loses an additional $S$ life points, as it is at the center of
+  the explosion. Thus, the targeted monster loses a total of $S + A$ life points from that explosion.
+\end{itemize}
+
+He can freely choose which monster to target each time he fires an explosion. Since firing explosions
+is exhausting, he wants to know the minimum number of explosions he needs to fire to defeat all the
+monsters if he targets them optimally.
+
+\section*{Input}  
+The first line of input contains three integers, $N$ ($1 \leq N \leq 10$), $S$ ($1 \leq S \leq 10^9$), and $A$ ($0 \leq A \leq 10^9$), 
+which are the three values described above.  
+
+The second line contains $N$ integers $h_1, h_2, \ldots, h_N$ ($1 \leq h_i \leq 10^9$), representing the
+life points of each monster.  
+
+\section*{Output}  
+Print the minimum number of explosions Theodor needs to fire to defeat all the monsters.  
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $20$       & $A = 0$ \\ \hline
+  $2$    & $35$       & $h_i \leq 100$ \\ \hline
+  $3$    & $5$        & $A \leq 10^5$ \\ \hline
+  $4$    & $40$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample 1}
+An optimal way to fire explosions is as follows:  
+\begin{enumerate}  
+  \item Fire an explosion at the monster with 7 life points. The monsters now have \verb+4,1,2+ life points remaining.  
+  \item Fire an explosion at the monster with 4 life points remaining. The monster with 1 life point is defeated. The remaining monsters now have \verb+1,1+ life points.  
+  \item Fire an explosion at any of the remaining monsters. Now all the monsters have been defeated, and Theodor is done.  
+\end{enumerate}

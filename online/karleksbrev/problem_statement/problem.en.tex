@@ -1,0 +1,141 @@
+\problemname{Love Letter}
+\noindent
+
+Mio and Sara come from two very different families. In Mio's family, everyone wears hats shaped like rectangles, 
+while in Sara's family, everyone wears triangular-shaped hats. 
+This difference in taste has led to feuds that have lasted for generations. 
+Despite this, Mio and Sara happened to meet one day and fell in love at first sight.
+
+Since it is difficult for them to meet, they instead send messages to each other to communicate. 
+Because they are very secretive, we do not know exactly how the devices they use to communicate work. 
+However, we do know a few things: when Sara wants to send a message, she types it 
+in as a sequence of ones and zeros into her device, and then it sends the message. 
+Unfortunately, bad weather can cause problems. When the machine 
+sends ones and zeros during bad weather, it sends the exact opposite. For example, if the 
+weather is bad and the machine tries to send a \texttt{0}, it will send a \texttt{1} instead.
+
+Sara has observed that every time she sends a message, there is bad weather exactly once during
+a contiguous period of time. 
+This means that if she tries to send a particular message, the message that the recipient receives will be incorrect 
+in such a way that, in a specific interval (which can be of size 1 or more, but not zero), all zeros become 
+ones and all ones become zeros. We call this the interval being \textit{corrupted}.
+
+For example: if Sara sends \texttt{11101001}, it is possible that the weather causes the following corruption: 
+\texttt{11101001} $\Rightarrow$ \texttt{11\textbf{01011}1}.
+
+Let the message Sara wants to send be denoted by $S$ and the message Mio receives be denoted by $M$. 
+Thus, $S$ is never equal to $M$ due to the bad weather. Sara and Mio now want to develop a system to communicate 
+with each other despite the bad weather. It can be shown that if Sara sends exactly $S$, it will be impossible for 
+Mio to use $M$ to find $S$. But maybe it will work if Sara sends a message that is slightly longer than $S$?
+
+Your task is to develop the system for Sara and Mio so that they can communicate flawlessly. 
+You do this by implementing two functions, \texttt{encode} and \texttt{decode}. 
+The function \texttt{encode} will be called with $S$, and it should then return $E$. 
+Sara will then send $E$ through her machine. 
+
+Afterward, Mio receives the string $M$ and calls the function \texttt{decode} with $M$, 
+and its job is to use $M$ to find $S$.
+
+To score points on this task, the system must work. Therefore, \texttt{decode} must always be able 
+to find $S$, regardless of how bad weather corrupts $E$. You will get more points if $E$ is short.
+
+\section*{Implementation}
+Your solution to the problem must be written in one of the following languages: C++, Java, Python, or Rust.
+Below is a description of what the implementation looks like in C++. In most other languages, it works similarly. 
+You can download a reference implementation for your language in the attachments at the bottom of the page.
+
+You \textbf{must not} create a main function. Instead, you should implement the following functions:\\
+
+\begin{itemize}
+  \item \texttt{string encode(string S)}\\
+  \begin{itemize}
+    \item The parameter $S$ is the message Sara wants to send to Mio. $S$ consists only of the characters 
+    \texttt{0} and \texttt{1}. In all test cases, $S$ consists of exactly 100 characters.
+    \item The return value should be $E$, the message Sara sends through the machine. $E$ must contain at 
+    least one characters and may only consist of the characters \texttt{0} and \texttt{1}.
+  \end{itemize}
+
+  \item After sending $E$, an interval will be corrupted during transmission.
+
+  \item \texttt{string decode(string M)}\\
+  \begin{itemize}
+    \item The parameter $M$ is the message Mio receives. This will be $E$ after an interval has been corrupted. 
+    Therefore, $M$ consists only of the characters \texttt{0} and \texttt{1}.
+    \item The return value should be $S$, the message that \texttt{encode} was originally called with. 
+    If the return value is the same as $S$, you get the correct answer for the test case.
+  \end{itemize}
+\end{itemize}
+
+\texttt{encode} and \texttt{decode} can \textbf{only} communicate through the parameters they are called with, 
+$S$ and $M$. Therefore, your program will be restarted between calls to each function. 
+\texttt{encode} and \texttt{decode} must be fast enough to be called 50 times each within the time limit. 
+The judge is also \textit{non-adaptive}. This means that how it selects $S$ 
+does not depend on what you choose to send as $E$. When choosing which interval to corrupt, it will only
+look at the number of characters in $E$, not the contents of $E$.
+
+\section*{Reference Implementations}
+All reference implementations in the attachments implement the following protocol: \texttt{encode} sends each 
+letter in $S$ 5 times in a row. \texttt{decode} then takes each group of 5 characters and says that the value 
+of the letter in $S$ is the one in the middle of the group. This protocol does not work, but it shows what the implementation 
+of a protocol might look like.
+
+It is important that your solution does not read or write from standard input/output. If your solution does this, 
+you will likely get a strange error message. For some languages, the filename is important, so do not change it. Also, 
+do not change the names of functions and classes if they exist. Rust requires extra steps to work, which you can read about 
+in the file rust/readme.txt in karleksbrev.zip.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+Let $E_{max}$ denote the length of the $E$ with the most characters that \texttt{encode} produces in a 
+particular test case group. To score points for a test case, $E_{max}$ must be small enough.
+
+It is also given that $S$ always consists of exactly 100 characters.
+
+\noindent
+\begin{tabular}{| l | l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$   & $7$        & $E_{max} \leq 510$ \\ \hline
+  $2$   & $11$       & $E_{max} \leq 410$ \\ \hline
+  $3$   & $21$       & $E_{max} \leq 310$ \\ \hline
+  $4$   & $0$        & $E_{max} \leq 310$, $l$ and $r$ are even. \\ \hline
+  $5$   & $0$        & $E_{max} \leq 310$, $l$ is even. \\ \hline
+  $6$   & $5$        & $E_{max} \leq 250$, $l=r$ \\ \hline
+  $7$   & $25$       & $E_{max} \leq 250$ \\ \hline
+  $8$   & $13$       & $E_{max} \leq 210$ \\ \hline
+  $9$   & $18$       & $E_{max} \leq 150$ \\ \hline
+\end{tabular}
+
+\section*{Input Format for the Example Judge}
+The example judge reads input in the following format:
+\begin{itemize}
+  \item A line with the integers $N$ and $K$.
+  \item A line with the bit string $S$.
+  \item A line with the integers $l$ and $r$. This is the interval in $E$ that the judge will corrupt.
+\end{itemize}
+
+
+\section*{Example Interaction}
+
+Consider the following input to the judge:
+\begin{verbatim}
+5 25
+01011
+1 3
+\end{verbatim}
+
+When the example program is run, the following happens. Note that the example program \textbf{does not} solve the problem in this case.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      \textbf{Event} & \textbf{Result} \\ \hline
+      \texttt{encode(01011)} is called & \texttt{encode} returns \texttt{0000011111000001111111111} \\ \hline
+      The judge corrupts the return value of \texttt{encode(01011)} & The corrupted message becomes \texttt{0\textbf{111}011111000001111111111} \\ \hline
+      \texttt{decode(0111011111000001111111111)} is called & \texttt{decode} returns \texttt{11011} \\ \hline
+      The judge compares \texttt{01011} and the return value of \texttt{decode} & Since they differ, the solution gets ``Wrong Answer'' \\ \hline 
+  \end{tabular}
+\end{table}

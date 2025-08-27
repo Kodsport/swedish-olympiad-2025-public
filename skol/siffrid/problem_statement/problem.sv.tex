@@ -1,0 +1,43 @@
+\problemname{Siffrids siffersumma}
+\noindent
+Siffrid älskar att leka med tal! Just nu sitter hon och leker med heltalet $N$.
+
+Hon undrar hur man kan skapa det minsta och största talet som har samma siffersumma och antal siffror som $N$.
+Kan du hjälpa henne?
+
+Siffersumman av ett tal definieras som summan av alla siffror i talet. 
+
+\noindent
+Till exempel är siffersumman av talet $1234$: 
+$$
+1 + 2 + 3 + 4 = 10,
+$$
+
+och siffersumman av talet $220$:
+$$
+2 + 2 + 0 = 4.
+$$
+
+
+\section*{Indata}
+Indatan består av en rad med ett heltal, $N$ ($1 \le N \le 10^9$).
+
+\section*{Utdata}
+Skriv ut två heltal på samma rad, det minsta och det största talet med samma siffersumma och antal siffror som $N$.
+Talen ska vara separerade med ett mellanslag.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $40$       & $N \leq 10^5$ \\ \hline
+  $2$    & $60$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall 1}
+Vi kan inte få ett tal mindre än 101. Tal som 11 och 2 har samma siffersumma som $N$ och är mindre än 101, men de har inte
+lika många siffror som $N$.

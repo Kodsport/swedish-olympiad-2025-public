@@ -1,0 +1,61 @@
+\problemname{Truls' Troubles}
+
+Truls and Henry are playing table tennis against each other.
+
+Both Truls and Henry strongly dislike math.  
+More than anything, they hate calculating how many points each of them has during the game.  
+To simplify scoring, they have come up with their own solution:
+
+Instead of constantly keeping track of their points, they write a ``\texttt{T}'' if Truls
+scores a point and an ``\texttt{H}'' if Henry scores a point, immediately after each won rally.
+
+When Truls and Henry play table tennis, the scoring system works according to these three rules:  
+\begin{enumerate}
+  \item One point is awarded after each rally.  
+  \item A player wins a match if both of the following conditions are met:  
+  \begin{itemize}
+    \item The player leads by at least 2 points over their opponent.  
+    \item The player has at least 11 points.  
+  \end{itemize}  
+  For example, if Truls has 11 points and Henry has 9 points, Truls is declared the winner.
+  But if Truls has 11 points and Henry has 10 points, there is no winner yet.  
+
+  \item When a player wins according to the criteria above, the points for both players are reset to zero, and a new match begins.  
+\end{enumerate}  
+
+Now Truls and Henry have been playing for a long time, and both want to know the current score.  
+They ask you to write a program that calculates the current score for them based on their notes.
+
+\section*{Input}
+Input consists of Truls and Henry's notes, which consists of multiple letters on a single line. The number of letters is between 1 and 30.  
+Each letter will be either ``\texttt{T}'' or ``\texttt{H}''.
+
+\section*{Output}
+Print the score of the ongoing match as $T$-$H$, where $T$ is
+the number of points Truls has, and $H$ is the number of points Henry has.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups, each worth a number of points. Each test group contains
+a set of test cases. To get the points for a test group you need to solve all test cases in the test group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $40$       & A match always ends as soon as one player reaches 11 points. \\ \hline
+  $2$    & $60$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample 1}
+In total, Truls has won 4 points, and Henry has won 5 points.
+
+\section*{Explanation of Sample 2}
+Since Truls won the match when the score reached \texttt{11-0}, the score was reset to \texttt{0-0}.
+
+\section*{Explanation of Sample 3}
+Even though both have more than 11 points, neither leads by 2 points. Therefore, no winner has been declared yet.
+
+\section*{Explanation of Sample 4}
+This game is a continuation of sample 3, where Henry wins the match after scoring two more points.  
+The score is reset, and Henry then wins another point. Therefore, the score is \texttt{0-1}.
+
